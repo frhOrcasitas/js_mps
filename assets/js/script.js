@@ -8,7 +8,10 @@ function countCharacters() {
 
 function checkEmail() {
     let emailStr = document.getElementById("txtInputStringF5").value;
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let isValidEmail = emailPattern.test(emailStr);
-    document.getElementById("isEmail").innerHTML = isValidEmail ? "Valid" : "Invalid";
+    
+    if (emailStr.includes("@")) {
+        document.getElementById("isEmail").innerHTML = "Valid";
+    } else {
+        document.getElementById("isEmail").innerHTML = "Invalid";
+    }
 }
